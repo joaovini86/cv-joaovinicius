@@ -1,0 +1,104 @@
+/* Responsividade */
+@media (max-width: 992px) {
+    .masthead h1 {
+        font-size: 2.5rem;
+    }
+    
+    .timeline::before {
+        left: 40px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+    }
+    
+    .timeline-item:after {
+        left: 30px;
+    }
+    
+    .left:after,
+    .right:after {
+        left: 30px;
+    }
+    
+    .right {
+        left: 0%;
+    }
+    
+    .contact-info {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-section {
+        padding: 4rem 0;
+    }
+    
+    .masthead {
+        min-height: auto;
+        height: auto;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    
+    .masthead h1 {
+        font-size: 2rem;
+    }
+    
+    .timeline::before {
+        display: none;
+    }
+    
+    .timeline-item {
+        padding-left: 1rem;
+        margin-bottom: 3rem;
+    }
+    
+    .timeline-item:after {
+        display: none;
+    }
+    
+    .contact-info {
+        margin-top: 3rem;
+    }
+    
+    .btn-xl {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .masthead h1 {
+        font-size: 1.8rem;
+    }
+    
+    .masthead p {
+        font-size: 1rem;
+    }
+    
+    .social-icons {
+        flex-wrap: wrap;
+    }
+    
+    .skills-cloud {
+        gap: 0.5rem;
+    }
+    
+    .skill-cloud-item {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .btn-xl {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+}

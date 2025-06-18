@@ -1,0 +1,738 @@
+/*==========================================
+  VARIÁVEIS E CONFIGURAÇÕES GERAIS
+==========================================*/
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #4b5563;
+    --light-color: #f9fafb;
+    --dark-color: #111827;
+    --gray-color: #6b7280;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --border-radius: 8px;
+    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease-in-out;
+}
+
+/* Tema escuro */
+body.dark-theme {
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --secondary-color: #d1d5db;
+    --light-color: #1f2937;
+    --dark-color: #f9fafb;
+    --gray-color: #9ca3af;
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Botão de alternar tema */
+.theme-switch-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+    margin: 0 10px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/*==========================================
+  TIPOGRAFIA
+==========================================*/
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.divider {
+    height: 0.2rem;
+    max-width: 3.25rem;
+    margin: 1.5rem auto;
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+.divider.light {
+    background-color: #fff;
+}
+
+/*==========================================
+  BOTÕES
+==========================================*/
+.btn {
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-xl {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/*==========================================
+  NAVEGAÇÃO
+==========================================*/
+#mainNav {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    transition: var(--transition);
+}
+
+body.dark-theme #mainNav {
+    background-color: #1e293b;
+}
+
+#mainNav .navbar-brand {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+body.dark-theme #mainNav .navbar-brand {
+    color: var(--light-color);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    transition: var(--transition);
+}
+
+body.dark-theme #mainNav .navbar-nav .nav-item .nav-link {
+    color: var(--light-color);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link:active {
+    color: var(--primary-color);
+}
+
+#mainNav.navbar-shrink {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/*==========================================
+  CABEÇALHO
+==========================================*/
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    position: relative;
+}
+
+.masthead h1 {
+    font-size: 3.5rem;
+}
+
+.masthead p {
+    font-size: 1.15rem;
+}
+
+.masthead .btn {
+    margin-top: 1.5rem;
+}
+
+/*==========================================
+  SEÇÕES GERAIS
+==========================================*/
+.page-section {
+    padding: 6rem 0;
+}
+
+.bg-light {
+    background-color: var(--light-color) !important;
+}
+
+body.dark-theme .bg-light {
+    background-color: #1a202c !important;
+}
+
+.bg-dark {
+    background-color: var(--dark-color) !important;
+}
+
+body.dark-theme .bg-dark {
+    background-color: #0f172a !important;
+}
+
+/*==========================================
+  SEÇÃO SOBRE
+==========================================*/
+.profile-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--box-shadow);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    color: white;
+}
+
+.social-icon-large {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+}
+
+/*==========================================
+  SEÇÃO EXPERIÊNCIA PROFISSIONAL - TIMELINE
+==========================================*/
+/* Estilos para o container da timeline */
+.timeline-container {
+    position: relative;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+/* Estilo para a linha vertical da timeline */
+.timeline-vertical-line {
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 10px;
+    height: 750px; /* Altura fixa para a linha vertical */
+    left: 50%;
+    margin-left: -2px;
+    z-index: 0;
+}
+
+/* Remover a linha original */
+.timeline:before {
+    display: none !important;
+}
+
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-item {
+    padding: 1rem 3rem;
+    position: relative;
+    width: 50%;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+.timeline-item:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    top: 0;
+    z-index: 1; /* Garante que os círculos fiquem acima da linha */
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left:after {
+    right: -10px;
+}
+
+.right:after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+body.dark-theme .timeline-content {
+    background: #1e293b;
+}
+
+.timeline-content .date {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+}
+
+.timeline-content h4 {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+}
+
+/* Ajustes responsivos para a linha da timeline */
+@media (max-width: 992px) {
+    .timeline-vertical-line {
+        left: 40px;
+        margin-left: 0;
+        height: 850px; /* Ajuste para telas médias */
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+    }
+    
+    .timeline-item:after {
+        left: 30px;
+    }
+    
+    .left:after,
+    .right:after {
+        left: 30px;
+    }
+    
+    .right {
+        left: 0%;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-vertical-line {
+        display: none;
+    }
+    
+    .timeline-item {
+        padding-left: 1rem;
+    }
+    
+    .timeline-item:after {
+        display: none;
+    }
+}
+
+/*==========================================
+  SEÇÃO EDUCAÇÃO
+==========================================*/
+.education-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    background-color: white;
+}
+
+body.dark-theme .education-card {
+    background-color: #1e293b;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+.education-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.education-card h3 {
+    font-size: 1.3rem;
+}
+
+.education-card h4 {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.education-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.certification-item {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    height: 100%;
+    transition: var(--transition);
+}
+
+body.dark-theme .certification-item {
+    background-color: #1e293b;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+}
+
+.certification-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.certification-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-item p {
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+/*==========================================
+  SEÇÃO HABILIDADES
+==========================================*/
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-progress {
+    margin-top: 0.5rem;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #e2e8f0;
+    overflow: hidden;
+}
+
+body.dark-theme .progress {
+    background-color: #334155;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+.skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.skill-cloud-item {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.skill-cloud-item:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary-dark);
+    cursor: default;
+}
+
+/*==========================================
+  SEÇÃO PORTFÓLIO
+==========================================*/
+.portfolio-item {
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.portfolio-link {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+.portfolio-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: var(--transition);
+    background-color: rgba(37, 99, 235, 0.9);
+}
+
+.portfolio-hover:hover {
+    opacity: 1;
+}
+
+.portfolio-hover-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+.portfolio-caption {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: white;
+}
+
+body.dark-theme .portfolio-caption {
+    background-color: #1e293b;
+}
+
+.portfolio-caption h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.portfolio-caption p {
+    font-style: italic;
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+/*==========================================
+  SEÇÃO CONTATO
+==========================================*/
+.form-control {
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    background-color: white;
+}
+
+body.dark-theme .form-control {
+    background-color: #1e293b;
+    border-color: #475569;
+    color: var(--light-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+}
+
+.contact-info {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+
+#form-status {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+}
+
+#form-status.success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+#form-status.error {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/*==========================================
+  FOOTER E BOTÃO TOPO
+==========================================*/
+footer {
+    padding: 2rem 0;
+}
+
+.scroll-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    line-height: 2.75rem;
+    border-radius: 0.25rem;
+    transition: var(--transition);
+    z-index: 1030;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.scroll-to-top i {
+    font-weight: 800;
+}

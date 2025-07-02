@@ -1,89 +1,646 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="pt-BR">
+<head>
+    <!-- Metadados básicos -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>João Vinicius | TI & Desenvolvimento</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.9.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.9.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.9.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- SEO -->
+    <meta name="description" content="Currículo profissional de João Vinicius - Desenvolvedor Web" />
+    <meta name="keywords" content="currículo, desenvolvedor, web, tecnologia, João Vinicius" />
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <!-- Fontes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- Bibliotecas CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+    <!-- CSS personalizado -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <!-- Estilos inline específicos (correção linha timeline) -->
+    <style>
+        /* Correção para a linha vertical da timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding: 0;
         }
-      });
-    </script>
-  </body>
+
+        /* Remove a linha original */
+        .timeline:before {
+            display: none !important;
+        }
+
+        /* Adiciona linha customizada */
+        .timeline-container {
+            position: relative;
+        }
+
+        .timeline-vertical-line {
+            position: absolute;
+            width: 4px;
+            background-color: #2563eb;
+            top: 10px;
+            height: 750px; /* Altura fixa para a linha vertical */
+            left: 50%;
+            margin-left: -2px;
+            z-index: 0;
+        }
+
+        @media (max-width: 992px) {
+            .timeline-vertical-line {
+                left: 40px;
+                margin-left: 0;
+                height: 850px; /* Ajuste para telas médias */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-vertical-line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Botão de modo escuro/claro -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <div class="slider round"></div>
+        </label>
+        <span class="theme-mode"><i class="fas fa-moon"></i></span>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">João Vinicius</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiencia">Experiência</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#educacao">Educação</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho/Banner -->
+    <header class="masthead" id="page-top">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-10 align-self-end" data-aos="fade-up">
+                    <h1 class="text-white font-weight-bold">João Vinicius</h1>
+                    <hr class="divider my-4" />
+                </div>
+                <div class="col-lg-8 align-self-baseline" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-white-75 mb-5">João Vinicius | TI & Desenvolvimento</p>
+                    <a class="btn btn-primary btn-xl" href="#sobre">Conheça meu trabalho</a>
+                    <a class="btn btn-outline-light btn-xl ms-3" href="assets/seu-curriculo.pdf" download>
+                        <i class="fas fa-download me-2"></i>Baixar CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Sobre -->
+    <section class="page-section" id="sobre">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mt-0" data-aos="fade-up">Sobre Mim</h2>
+                    <hr class="divider my-4" />
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center" data-aos="fade-right">
+                    <img src="img/profile.jpeg" class="img-fluid rounded-circle profile-img" alt="Seu Nome">
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <p class="text-muted mb-4">
+                        Olá! Sou um profissional apaixonado por tecnologia com mais de 2 anos de experiência.
+                    </p>
+                    <p class="text-muted">
+                      Sou um profissional de Tecnologia da Informação apaixonado por desenvolvimento e inovação. Tenho experiência em desenvolvimento full stack, criação de soluções eficientes e otimização de processos. Estou sempre em busca de aprendizado contínuo para entregar resultados de alta qualidade e contribuir para o sucesso dos projetos.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.linkedin.com/in/joãoviniciusrosamonteiro" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/joaovini86" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/joaovini86" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Experiência -->
+    <section class="page-section" id="experiencia">
+  <div class="container">
+    <h2 class="text-center mt-0" data-aos="fade-up">Experiência Profissional</h2>
+    <hr class="divider my-4" />
+    
+    <!-- Container da timeline com linha vertical personalizada -->
+    <div class="timeline-container">
+      <!-- Linha vertical customizada -->
+      <div class="timeline-vertical-line"></div>
+      
+      <div class="timeline">
+        <!-- Experiência 1 - Desenvolvedor -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="timeline-content">
+            <div class="date mb-2 text-muted" style="font-weight: 600;">Out/2024 – Presente</div>
+            <h3 class="mb-1">Analista de TI / Desenvolvedor</h3>
+            <h4 class="mb-3 text-secondary">Copal Alimentos</h4>
+            <p>
+              Desenvolvimento e manutenção de sistemas internos utilizando Oracle PL/SQL e integração com PDV e ERP (Winthor). 
+              Criação de relatórios otimizados para apoio à tomada de decisão. Implementação de melhorias nos processos automatizados, garantindo maior eficiência e redução de erros.
+            </p>
+            <p>
+              Suporte técnico e integração com equipes multidisciplinares para solução de problemas, além do acompanhamento das demandas fiscais envolvendo NFC-e e impressão.
+            </p>
+            <div class="tags mt-3">
+              <span class="tag badge bg-primary me-2">Oracle PL/SQL</span>
+              <span class="tag badge bg-primary me-2">Winthor ERP</span>
+              <span class="tag badge bg-primary me-2">PDV</span>
+              <span class="tag badge bg-primary">Automação</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experiência 4 - Estagiário de TI -->
+        <div class="timeline-item right" data-aos="fade-left">
+          <div class="timeline-content">
+            <div class="date mb-2 text-muted" style="font-weight: 600;">Jan/2023 – Ago/2023</div>
+            <h3 class="mb-1">Estagiário de TI</h3>
+            <h4 class="mb-3 text-secondary">Compupack Soluções em TI</h4>
+            <p>
+              Suporte técnico remoto e presencial com foco em manutenção de equipamentos e redes. 
+              Participação em projetos de automação e infraestrutura, aplicando scripts e ferramentas para otimização dos processos.
+            </p>
+            <p>
+              Colaboração no desenvolvimento de soluções para melhoria contínua dos sistemas internos, incluindo testes e documentação técnica.
+            </p>
+            <div class="tags mt-3">
+              <span class="tag badge bg-primary me-2">Automação</span>
+              <span class="tag badge bg-primary me-2">Infraestrutura</span>
+              <span class="tag badge bg-primary">Suporte Técnico</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experiência 5 - Estagiário de TI -->
+        <div class="timeline-item left" data-aos="fade-right">
+          <div class="timeline-content">
+            <div class="date mb-2 text-muted" style="font-weight: 600;">Jan/2023 – Ago/2023</div>
+            <h3 class="mb-1">Estagiário de TI</h3>
+            <h4 class="mb-3 text-secondary">SISPACK Software</h4>
+            <p>
+              Atualização e manutenção de sistemas próprios, com suporte a banco de dados e participação em testes e homologação de novas funcionalidades para garantir qualidade e estabilidade.
+            </p>
+            <p>
+              Desenvolvimento e execução de scripts para automação de tarefas rotineiras, auxiliando no controle e monitoramento dos sistemas.
+            </p>
+            <div class="tags mt-3">
+              <span class="tag badge bg-primary me-2">Banco de Dados</span>
+              <span class="tag badge bg-primary me-2">Testes</span>
+              <span class="tag badge bg-primary">Sistemas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Seção Educação -->
+    <section class="page-section" id="educacao">
+        <div class="container">
+            <h2 class="text-center mt-0" data-aos="fade-up">Formação Acadêmica</h2>
+            <hr class="divider my-4" />
+            
+            <div class="row">
+                <!-- Formação 1 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up">
+                    <div class="card education-card h-100">
+                        <div class="card-body">
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Tecnologia Da Informação</h3>
+                            <h4>Universidade Estacio de Sá</h4>
+                            <p class="education-date">2021 - 2024</p>
+                            <p class="text-muted">Especialização em Desenvolvimento de Software. Principais disciplinas incluíram Algoritmos, Estruturas de Dados, Engenharia de Software e Banco de Dados.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formação 2 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card education-card h-100">
+                        <div class="card-body">
+                            <div class="education-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3>Pós Graduação em Desenvolvimento Full Stack</h3>
+                            <h4>Universidade Estacio de Sá</h4>
+                            <p class="education-date">2025 - 2026</p>
+                            <p class="text-muted">Curso focado no desenvolvimento completo de aplicações web, aprimorando habilidades técnicas para atuar na criação e manutenção de sistemas modernos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+<!-- Certificações -->
+<div class="certifications mt-5">
+  <h3 class="text-center mb-4" data-aos="fade-up">Certificações</h3>
+  <div class="row">
+
+      <!-- Full Stack -->
+      <div class="col-md-4 mb-3" data-aos="zoom-in">
+          <div class="certification-item">
+              <i class="fas fa-laptop-code"></i>
+              <h4>Desenvolvedor Full Stack</h4>
+              <p>HashTAG Treinamentos</p>
+          </div>
+      </div>
+
+      <!-- Governança de TI -->
+      <div class="col-md-4 mb-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="certification-item">
+              <i class="fas fa-network-wired"></i>
+              <h4>Governança de TI</h4>
+              <p>Estácio</p>
+          </div>
+      </div>
+
+      <!-- Active Directory -->
+      <div class="col-md-4 mb-3" data-aos="zoom-in" data-aos-delay="200">
+          <div class="certification-item">
+              <i class="fas fa-server"></i>
+              <h4>Active Directory</h4>
+              <p>Udemy</p>
+          </div>
+      </div>
+
+      <!-- Analista de Dados e BI -->
+      <div class="col-md-4 mb-3" data-aos="zoom-in" data-aos-delay="300">
+          <div class="certification-item">
+              <i class="fas fa-chart-line"></i>
+              <h4>Analista de Dados e BI</h4>
+              <p>Udemy</p>
+          </div>
+      </div>
+
+      <!-- Oracle Database -->
+      <div class="col-md-4 mb-3" data-aos="zoom-in" data-aos-delay="400">
+          <div class="certification-item">
+              <i class="fas fa-database"></i>
+              <h4>Oracle Database</h4>
+              <p>Udemy</p>
+          </div>
+      </div>
+
+      <!-- Banco de Dados (Curso em Vídeo) -->
+      <div class="col-md-4 mb-3" data-aos="zoom-in" data-aos-delay="500">
+          <div class="certification-item">
+              <i class="fas fa-database"></i>
+              <h4>Banco de Dados</h4>
+              <p>Curso em Vídeo</p>
+          </div>
+      </div>
+
+  </div>
+</div>
+
+
+   <!-- Seção Habilidades -->
+    <section class="page-section bg-light" id="habilidades">
+        <div class="container">
+            <h2 class="text-center mt-0" data-aos="fade-up">Habilidades Técnicas</h2>
+            <hr class="divider my-4" />
+            
+            <div class="row mb-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="mb-4">Linguagens & Frameworks</h3>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>HTML5 & CSS3</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="95"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="90"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>React.js</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="85"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>Node.js</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="80"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>PL/SQL</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4">Ferramentas & Tecnologias</h3>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>Git & GitHub</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="90"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>Oracle Database</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="90"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>MongoDB</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="80"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>Docker</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="70"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="d-flex justify-content-between">
+                            <span>AWS</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress">
+                                <div class="progress-bar" data-percent="65"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outras habilidades -->
+            <div class="other-skills text-center" data-aos="fade-up">
+                <h3 class="mb-4">Outras Habilidades</h3>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="skills-cloud">
+                            <span class="skill-cloud-item">TypeScript</span>
+                            <span class="skill-cloud-item">Redux</span>
+                            <span class="skill-cloud-item">GraphQL</span>
+                            <span class="skill-cloud-item">Bootstrap</span>
+                            <span class="skill-cloud-item">Tailwind CSS</span>
+                            <span class="skill-cloud-item">Power BI</span>
+                            <span class="skill-cloud-item">MySQL</span>
+                            <span class="skill-cloud-item">PostgreSQL</span>
+                            <span class="skill-cloud-item">Firebase</span>
+                            <span class="skill-cloud-item">ERP Winthor</span>
+                            <span class="skill-cloud-item">SQL Developer</span>
+                            <span class="skill-cloud-item">VS Code</span>
+                            <span class="skill-cloud-item">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Portfólio -->
+    <section class="page-section" id="portfolio">
+        <div class="container">
+            <h2 class="text-center mt-0" data-aos="fade-up">Portfólio</h2>
+            <hr class="divider my-4" />
+            
+            <div class="row">
+                <!-- Projeto 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in">
+                  <div class="portfolio-item">
+                      <a href="https://marmoraria-monteiro.web.app/" class="portfolio-link" target="_blank" rel="noopener noreferrer">
+                          <div class="portfolio-hover">
+                              <div class="portfolio-hover-content">
+                                  <i class="fas fa-plus fa-3x"></i>
+                              </div>
+                          </div>
+                          <img class="img-fluid" src="img/projeto1.jpeg" alt="Projeto 1">
+                      </a>
+                      <div class="portfolio-caption">
+                          <h4>Site Marmoraria</h4>
+                          <p class="text-muted">HTML, CSS, JavaScript, Firebase</p>
+                      </div>
+                  </div>
+              </div>
+                
+      <!-- Projeto 2 -->
+ <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="portfolio-item">
+      <a href="#" class="portfolio-link">
+          <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+              </div>
+          </div>
+          <img class="img-fluid" src="img/projeto2.png" alt="Projeto 2">
+      </a>
+      <div class="portfolio-caption">
+          <h4>ChatBot</h4>
+          <p class="text-muted">HTML, JavaScript, Fetch API, Node.js, CSS, Firebase</p>
+      </div>
+  </div>
+</div>
+
+                
+                <!-- Projeto 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-item">
+                        <a href="#" class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="img/projeto3.png" alt="Projeto 3">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Plataforma de E-commerce para Venda de Sites </h4>
+                            <p class="text-muted">HTML, CSS, JavaScript, Bootstrap 5</p>
+                        </div>
+                    </div>
+                </div>      
+            <div class="text-center mt-4">
+                <a href="https://github.com/joaovini86" class="btn btn-primary btn-xl" target="_blank">Ver mais no GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section class="page-section bg-dark text-white" id="contato">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="mt-0">Vamos Conversar!</h2>
+                    <hr class="divider my-4 light" />
+                    <p class="text-white-75 mb-5">Pronto para iniciar seu próximo projeto comigo? Envie-me uma mensagem e retornarei o mais breve possível!</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-xl w-100">Enviar Mensagem</button>
+                        <div id="form-status" class="mt-3"></div>
+                    </form>
+                </div>
+                
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:joaoviniciusrosamonteiro@gmail.com">joaoviniciusrosamonteiro@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+5548998146361">(48) 99814-6361</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Santa Catarina, SC - Brasil</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-icons mt-5">
+                        <a href="https://www.linkedin.com/in/joãoviniciusrosamonteiro" class="social-icon-large" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/joaovini86" class="social-icon-large" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/joaovini86" class="social-icon-large" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="small text-center text-muted">
+                Copyright &copy; 2023 - <span class="fw-bold">João Vinicius</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- JS personalizado -->
+    <script src="js/main.js"></script>
+    <script src="js/skills.js"></script>
+</body>
 </html>

@@ -202,7 +202,7 @@ body.dark-theme #mainNav .navbar-nav .nav-item .nav-link {
 .masthead {
     height: 100vh;
     min-height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/background.jpg');
+    background-image: linear-gradient(rgba(145, 168, 230, 0.829), rgba(0, 0, 0, 0.7)), url('../img/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -292,44 +292,50 @@ body.dark-theme .bg-dark {
   SEÇÃO EXPERIÊNCIA PROFISSIONAL - TIMELINE
 ==========================================*/
 /* Estilos para o container da timeline */
+
+/* Container da timeline */
 .timeline-container {
     position: relative;
     margin: 2rem 0;
     padding: 0;
-}
-
-/* Estilo para a linha vertical da timeline */
-.timeline-vertical-line {
+    min-height: 100vh; /* garante altura mínima para cobrir todo conteúdo */
+  }
+  
+  /* Linha vertical da timeline */
+  .timeline-vertical-line {
     position: absolute;
     width: 4px;
     background-color: var(--primary-color);
     top: 10px;
-    height: 750px; /* Altura fixa para a linha vertical */
+    bottom: 10px; /* evita altura fixa */
     left: 50%;
-    margin-left: -2px;
+    margin-left: -2px; /* centraliza a linha (4px / 2) */
     z-index: 0;
-}
-
-/* Remover a linha original */
-.timeline:before {
+  }
+  
+  /* Remove a linha original (se existir) */
+  .timeline:before {
     display: none !important;
-}
-
-.timeline {
+  }
+  
+  /* Container geral da timeline */
+  .timeline {
     position: relative;
     margin: 0;
     padding: 0;
-}
-
-.timeline-item {
+  }
+  
+  /* Cada item da timeline */
+  .timeline-item {
     padding: 1rem 3rem;
     position: relative;
-    width: 50%;
+    width: 50%; /* metade da largura da timeline */
     margin-bottom: 2rem;
     box-sizing: border-box;
-}
-
-.timeline-item:after {
+  }
+  
+  /* Círculo indicador do ponto da timeline */
+  .timeline-item:after {
     content: '';
     position: absolute;
     width: 20px;
@@ -337,111 +343,126 @@ body.dark-theme .bg-dark {
     background: var(--primary-color);
     border-radius: 50%;
     top: 0;
-    z-index: 1; /* Garante que os círculos fiquem acima da linha */
-}
-
-.left {
+    z-index: 1; /* fica acima da linha vertical */
+  }
+  
+  /* Posicionamento dos itens à esquerda e direita */
+  .left {
     left: 0;
-}
-
-.right {
+  }
+  
+  .right {
     left: 50%;
-}
-
-.left:after {
-    right: -10px;
-}
-
-.right:after {
-    left: -10px;
-}
-
-.timeline-content {
+  }
+  
+  /* Posicionamento do círculo nos lados */
+  .left:after {
+    right: -10px; /* à direita do item da esquerda */
+  }
+  
+  .right:after {
+    left: -10px; /* à esquerda do item da direita */
+  }
+  
+  /* Conteúdo dentro do item da timeline */
+  .timeline-content {
     padding: 1.5rem;
     background: white;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-}
-
-body.dark-theme .timeline-content {
+  }
+  
+  body.dark-theme .timeline-content {
     background: #1e293b;
-}
-
-.timeline-content .date {
+  }
+  
+  /* Estilos do texto dentro do conteúdo */
+  .timeline-content .date {
     color: var(--primary-color);
     font-weight: 600;
     margin-bottom: 0.5rem;
-}
-
-.timeline-content h3 {
+  }
+  
+  .timeline-content h3 {
     margin-bottom: 0.25rem;
     font-size: 1.5rem;
-}
-
-.timeline-content h4 {
+  }
+  
+  .timeline-content h4 {
     color: var(--secondary-color);
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 1rem;
-}
-
-.tags {
+  }
+  
+  /* Tags relacionadas */
+  .tags {
     margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-}
-
-.tag {
+  }
+  
+  .tag {
     font-size: 0.8rem;
     padding: 0.25rem 0.75rem;
     background-color: var(--primary-color);
     color: white;
     border-radius: 20px;
-}
-
-/* Ajustes responsivos para a linha da timeline */
-@media (max-width: 992px) {
+  }
+  
+  /*==============================
+    Responsividade para telas médias
+  ===============================*/
+  @media (max-width: 992px) {
     .timeline-vertical-line {
-        left: 40px;
-        margin-left: 0;
-        height: 850px; /* Ajuste para telas médias */
+      left: 50%;
+      transform: translateX(-50%);
     }
-    
+  
     .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 20px;
+      width: 100%; /* item ocupa largura total */
+      padding-left: 70px;
+      padding-right: 20px;
     }
-    
+  
     .timeline-item:after {
-        left: 30px;
+      left: 30px;
     }
-    
+  
     .left:after,
     .right:after {
-        left: 30px;
+      left: 30px; /* círculo sempre à esquerda */
     }
-    
+  
     .right {
-        left: 0%;
+      left: 0%; /* todos à esquerda */
     }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  /*==============================
+    Responsividade para telas pequenas
+  ===============================*/
+  @media (max-width: 768px) {
     .timeline-vertical-line {
-        display: none;
+      display: none; /* esconde linha vertical */
     }
-    
+  
     .timeline-item {
-        padding-left: 1rem;
+      padding-left: 1rem; /* reduz padding */
     }
-    
+  
     .timeline-item:after {
-        display: none;
+      display: none; /* esconde os círculos */
     }
-}
-
+  }
+  #experiencia {
+    background-image: url('../img/profissional.jpg');
+    background-size: cover;       /* cobre toda a área */
+    background-position: center;  /* centraliza a imagem */
+    background-repeat: no-repeat; /* não repete */
+  }
+  
 /*==========================================
   SEÇÃO EDUCAÇÃO
 ==========================================*/

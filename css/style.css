@@ -21,12 +21,40 @@ body.dark-theme {
     --primary-dark: #2563eb;
     --secondary-color: #d1d5db;
     --light-color: #1f2937;
-    --dark-color: #f9fafb;
+    --dark-color: #f9fafb;  /* texto claro */
     --gray-color: #9ca3af;
+  
     background-color: #111827;
-    color: #f9fafb;
+    color: var(--dark-color); /* texto claro para o corpo */
 }
 
+/* Correção para o texto e elementos no modo escuro */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6,
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme li,
+body.dark-theme a,
+body.dark-theme .text-secondary,
+body.dark-theme .timeline-content {
+    color: var(--dark-color) !important;
+}
+
+body.dark-theme .text-secondary {
+    color: var(--gray-color) !important;
+}
+
+/* Se houver links, eles ficam com cor primária no dark mode */
+body.dark-theme a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Reset básico do corpo e tipografia */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -202,7 +230,7 @@ body.dark-theme #mainNav .navbar-nav .nav-item .nav-link {
 .masthead {
     height: 100vh;
     min-height: 500px;
-    background-image: linear-gradient(rgba(145, 168, 230, 0.829), rgba(0, 0, 0, 0.7)), url('../img/background.jpg');
+    background-image: linear-gradient(rgba(145, 168, 230, 0.829), rgba(48, 93, 129, 0.7)), url('../img/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -296,20 +324,20 @@ body.dark-theme .bg-dark {
 /* Container da timeline */
 .timeline-container {
     position: relative;
-    margin: 2rem 0;
-    padding: 0;
-    min-height: 100vh; /* garante altura mínima para cobrir todo conteúdo */
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
   }
-  
-  /* Linha vertical da timeline */
   .timeline-vertical-line {
     position: absolute;
+    top: 0;
+    bottom: 0;
     width: 4px;
     background-color: var(--primary-color);
-    top: 10px;
-    bottom: 10px; /* evita altura fixa */
     left: 50%;
-    margin-left: -2px; /* centraliza a linha (4px / 2) */
+    transform: translateX(-50%);
     z-index: 0;
   }
   
